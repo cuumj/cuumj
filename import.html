@@ -9,21 +9,60 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page">
+  <div class="fixed-app-header">
+    <div class="status-bar">
+      <span>4:21</span>
+      <div class="status-icons">
+        <i class="fas fa-signal"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-battery-full"></i>
+      </div>
+    </div>
     <div class="header">
       <div class="back-btn" onclick="navigateToPage('main')"><i class="fas fa-chevron-left"></i></div>
-      <div class="header-title"></div> <!-- 제목 없음 -->
+      <div class="flex-spacer"></div>
+      <div class="header-title">이미지 가져오기</div>
+      <div class="flex-spacer"></div>
       <div class="header-menu"></div>
     </div>
+  </div>
     
-    <div class="import-screen">
-      <div class="import-title">Import Image</div>
-      <button class="import-button">갤러리에서 가져오기</button>
-      <button class="import-button">카메라로 촬영하기</button>
+  <div class="page">
+    <div class="import-screen" id="importScreen">
+      
+      <!-- 실제 파일 선택 input (숨겨짐, multiple 속성 추가) -->
+      <input type="file" id="imageInput" accept="image/*" multiple style="display: none;">
+
+      <!-- 이미지 미리보기 영역 및 슬라이더 -->
+      <div class="image-preview-area" id="imagePreviewArea">
+        <div class="image-slider-wrapper" id="imageSliderWrapper">
+          <!-- 선택된 이미지들이 여기에 동적으로 추가될 것입니다 -->
+        </div>
+        <p id="previewPlaceholder" class="placeholder-text">사진을 선택하거나 촬영하세요.</p>
+        
+        <!-- 슬라이더 네비게이션 버튼 (초기 숨김) -->
+        <div class="slider-nav-btn left" id="prevBtn" style="display: none;"><i class="fas fa-chevron-left"></i></div>
+        <div class="slider-nav-btn right" id="nextBtn" style="display: none;"><i class="fas fa-chevron-right"></i></div>
+
+        <!-- AI 분석 오버레이 (초기 숨김) -->
+        <div class="ai-analysis-overlay" id="aiAnalysisOverlay">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <p>AI 분석중...</p>
+            </div>
+        </div>
+      </div>
+
+      <!-- 버튼 컨테이너 -->
+      <div class="import-buttons-container">
+        <button class="import-button" id="galleryBtn">갤러리에서 가져오기</button>
+        <button class="import-button" id="cameraBtn">카메라로 촬영하기</button>
+        <!-- AI 분석 버튼 (초기 숨김) -->
+        <button class="import-button ai-analyze-btn" id="aiAnalyzeBtn" style="display: none;">AI 분석</button>
+      </div>
     </div>
   </div>
 
-  <!-- 하단 네비게이션 -->
   <div class="bottom-nav">
     <div class="nav-item" data-page="main">
       <i class="fas fa-home"></i>

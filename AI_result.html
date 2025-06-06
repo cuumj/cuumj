@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 분석 결과</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="fixed-app-header">
+    <div class="status-bar">
+      <span>4:21</span>
+      <div class="status-icons">
+        <i class="fas fa-signal"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-battery-full"></i>
+      </div>
+    </div>
+    <div class="header">
+      <div class="back-btn" onclick="navigateToPage('import')"><i class="fas fa-chevron-left"></i></div>
+      <div class="flex-spacer"></div>
+      <div class="header-title">AI 분석 결과</div>
+      <div class="flex-spacer"></div>
+      <div class="header-menu"><i class="fas fa-share-nodes"></i></div>
+    </div>
+  </div>
+    
+  <div class="page">
+    <div class="ai-result-screen">
+      <div class="result-image-container">
+        <!-- AI 분석된 이미지가 여기에 표시됩니다. script.js에서 동적으로 src를 설정합니다. -->
+        <img src="" alt="AI Analyzed Image"> 
+        
+        <!-- Navigation arrows -->
+        <div class="result-nav-btn left" onclick="prevResult()"><i class="fas fa-chevron-left"></i></div>
+        <div class="result-nav-btn right" onclick="nextResult()"><i class="fas fa-chevron-right"></i></div>
+        
+        <!-- Central Like/Share button -->
+        <div class="result-action-btn like-btn" onclick="toggleLike(this)"><i class="far fa-heart"></i></div> 
+
+        <!-- Product tags (임시 위치) -->
+        <div class="product-tag tag-1">
+            <span class="tag-dot"></span>
+            <div class="tag-connector-line"></div>
+            <div class="tag-label"></div>
+        </div>
+        <div class="product-tag tag-2">
+            <span class="tag-dot"></span>
+            <div class="tag-connector-line"></div>
+            <div class="tag-label"></div>
+        </div>
+      </div>
+
+      <div class="shop-the-look-section">
+        <div class="shop-title">Shop the look</div>
+        <div class="shop-items-horizontal-scroll" id="shopItemsScroll">
+          <!-- 각 shop-item-card에 onclick 추가 -->
+          <div class="shop-item-card" onclick="navigateToShopItem('item1')"></div>
+          <div class="shop-item-card" onclick="navigateToShopItem('item2')"></div>
+          <div class="shop-item-card" onclick="navigateToShopItem('item3')"></div>
+          <div class="shop-item-card" onclick="navigateToShopItem('item4')"></div>
+          <div class="shop-item-card" onclick="navigateToShopItem('item5')"></div>
+          <!-- 더 많은 아이템이 있다면 여기에 추가 -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" data-page="main">
+      <i class="fas fa-home"></i>
+      <span>홈</span>
+    </div>
+    <div class="nav-item" data-page="search">
+      <i class="fas fa-search"></i>
+      <span>검색</span>
+    </div>
+    <div class="nav-item" data-page="import">
+      <i class="fas fa-plus"></i>
+      <span>추가</span>
+    </div>
+    <div class="nav-item" data-page="bookmark">
+      <i class="fas fa-bookmark"></i>
+      <span>북마크</span>
+    </div>
+    <div class="nav-item" data-page="menu">
+      <i class="fas fa-bars"></i>
+      <span>더보기</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

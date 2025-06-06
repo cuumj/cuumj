@@ -518,16 +518,80 @@ body {
 
 /* Import Image 화면 */
 .import-screen {
-  padding: 60px 20px;
-  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 85px - 80px); /* 헤더 + 네비게이션 높이 제외 */
+  justify-content: space-between;
+  box-sizing: border-box;
+  /* text-align: center; 는 이제 필요 없음. 각 요소가 flexbox로 정렬됨 */
 }
 
+/* Import Image 제목 (상단에 위치) */
 .import-title {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  text-align: center; /* 제목은 중앙 정렬 유지 */
 }
 
+
+/* 이미지 미리보기 영역 */
+.image-preview-area {
+  flex-grow: 1; /* 남은 수직 공간을 모두 차지 */
+  display: flex; /* Flexbox로 내부 요소를 중앙 정렬하기 위함 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  background-color: #eee;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden; /* 슬라이더 콘텐츠가 넘치면 숨김 */
+  min-height: 200px;
+  position: relative; /* 자식 요소의 절대 위치 지정을 위해 */
+}
+
+.image-preview-area img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* 이미지가 잘리지 않고 컨테이너에 맞게 비율 유지 */
+  display: none; /* 초기에는 숨김 */
+}
+
+.image-preview-area .placeholder-text {
+  text-align: center; /* 명시적으로 중앙 정렬 */
+  padding: 20px;
+  color: #999;
+}
+
+.image-slider-wrapper {
+  display: flex;
+  height: 100%;
+  /* width: 100%; 를 제거. 내부 이미지들의 총 너비에 따라 조절됨 */
+  transition: transform 0.5s ease-in-out; /* 부드러운 슬라이드 전환 */
+  will-change: transform; /* 애니메이션 성능 최적화 */
+  align-items: center; /* 이미지들을 세로 중앙에 정렬 */
+  justify-content: flex-start; /* 이미지를 왼쪽부터 정렬 */
+  /* 초기에는 숨김 처리 */
+  visibility: hidden;
+}
+
+.image-slider-wrapper img {
+  max-width: calc(100% - 10px); /* 컨테이너 너비 - 간격 */
+  height: 100%;
+  object-fit: contain; /* 이미지가 잘리지 않고 컨테이너에 맞게 비율 유지 */
+  flex-shrink: 0; /* 이미지가 줄어들지 않도록 함 */
+  margin-right: 10px; /* 이미지 간 간격 */
+  display: block; /* 이미지 하단 공백 제거 */
+  background-color: transparent; /* 이미지 자체 배경 투명 */
+}
+/* 버튼 컨테이너 (하단에 위치) */
+.import-buttons-container {
+  display: flex;
+  flex-direction: column; /* 버튼들을 세로로 정렬 */
+  gap: 15px; /* 버튼들 사이 간격 */
+}
+
+/* 기존 .import-button 스타일은 이대로 유지 */
 .import-button {
   width: 100%;
   padding: 15px;
@@ -535,7 +599,6 @@ body {
   border: none;
   border-radius: 8px;
   font-size: 14px;
-  margin-bottom: 15px;
   cursor: pointer;
 }
 
@@ -679,6 +742,98 @@ body {
 }
 
 /* style.css 파일에 아래 내용 추가 */
+/* 슬라이더 네비게이션 버튼 */
+.slider-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+  color: white;
+  padding: 10px 12px;
+  border-radius: 50%; /* 원형 버튼 */
+  cursor: pointer;
+  z-index: 5; /* 이미지 위에 표시 */
+  font-size: 18px;
+  display: flex; /* 아이콘을 중앙에 정렬 */
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* 고정 너비 */
+  height: 40px; /* 고정 높이 */
+}
+
+.slider-nav-btn.left {
+  left: 10px;
+}
+
+.slider-nav-btn.right {
+  right: 10px;
+}
+
+/* 버튼 컨테이너 (하단에 위치) */
+.import-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* AI 분석 버튼 (기존 import-button 스타일 재사용, 추가 스타일) */
+.import-button.ai-analyze-btn {
+  background-color: #ff6b6b; /* AI 분석 버튼 고유 색상 (예시) */
+  color: white;
+  margin-top: 5px; /* 버튼들 사이 공간 */
+}
+
+
+/* AI 분석 오버레이 */
+.ai-analysis-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* 반투명 흰색 배경 */
+  backdrop-filter: blur(5px); /* 배경 흐림 효과 */
+  -webkit-backdrop-filter: blur(5px); /* Safari 지원 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 15; /* 슬라이더 네비게이션 버튼 위에 표시 */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  border-radius: 12px; /* image-preview-area와 동일하게 */
+}
+
+.ai-analysis-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 원형 프로그레스 바 */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #ff6b6b; /* 테마 색상 */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 /* Detail Page specific header adjustments */
 .detail-header .header-menu {
@@ -902,4 +1057,188 @@ body {
   cursor: pointer;
   padding: 8px 12px;
   border-radius: 20px;
+}
+
+/* AI Result Screen */
+.ai-result-screen {
+  padding-bottom: 100px; /* For bottom nav */
+  min-height: calc(100vh - 85px - 80px); /* Header + Nav height excluded */
+  background-color: white;
+}
+
+.result-image-container {
+  position: relative;
+  width: 100%;
+  /* Set a fixed height or aspect-ratio for consistent display */
+  height: 60vh; /* Roughly 60% of viewport height for the image */
+  max-height: 550px; /* Cap the max height on larger screens/devices */
+  overflow: hidden;
+  display: flex; /* To center the image */
+  justify-content: center;
+  align-items: center;
+  background-color: #eee; /* Placeholder background */
+}
+
+.result-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container */
+  display: block;
+}
+
+/* Navigation Arrows (similar to slider-nav-btn but styled for AI result page) */
+.result-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.3); /* Lighter, more translucent white background */
+  color: white; /* Arrows are white */
+  padding: 12px; /* Slightly larger padding for better touch target */
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 30; /* Above tags */
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; /* Slightly larger size */
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle white border */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.result-nav-btn.left {
+  left: 20px;
+}
+
+.result-nav-btn.right {
+  right: 20px;
+}
+
+/* Central Like/Share Button */
+.result-action-btn.like-btn {
+  position: absolute;
+  bottom: 20px; /* Position from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #ff6b6b; /* Red heart */
+  padding: 15px; /* Larger padding */
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 30;
+  font-size: 24px; /* Larger icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Larger button */
+  height: 60px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* More prominent shadow */
+}
+.result-action-btn.like-btn .fas.fa-heart {
+    color: #ff6b6b; /* Ensure filled heart is red */
+}
+.result-action-btn.like-btn .far.fa-heart {
+    color: #ff6b6b; /* Ensure empty heart is also red (as in image) */
+}
+
+
+/* Product Tags */
+.product-tag {
+  position: absolute;
+  display: flex;
+  align-items: center; /* Vertically align dot, line, label */
+  z-index: 20;
+}
+
+.product-tag .tag-dot {
+  width: 8px; /* Size of the dot */
+  height: 8px;
+  border-radius: 50%;
+  background-color: white; /* Dot background */
+  border: 1px solid rgba(0,0,0,0.3); /* Subtle border for definition */
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.product-tag .tag-connector-line {
+  height: 2px; /* Thickness of the line */
+  background-color: white; /* Line color */
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1); /* Match label shadow style */
+}
+
+.product-tag .tag-label {
+  background-color: white;
+  border-radius: 4px;
+  padding: 6px 10px; /* Adjusted padding for a more compact look */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  white-space: nowrap;
+  min-width: 70px; /* Example min width for blank labels */
+  height: 28px; /* Example height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333; /* Placeholder text color */
+  font-size: 13px; /* Placeholder text size */
+}
+
+/* Specific positioning for tag-1 (left side) */
+.product-tag.tag-1 {
+  top: 34%; /* Vertical position */
+  left: 20%; /* Horizontal position (dot origin) */
+  flex-direction: row; /* Dot -> Line -> Label */
+}
+.product-tag.tag-1 .tag-connector-line {
+  width: 50px; /* Line length */
+}
+
+/* Specific positioning for tag-2 (right side) */
+.product-tag.tag-2 {
+  top: 41%; /* Vertical position */
+  left: 55%; /* Horizontal position (dot origin) */
+  flex-direction: row-reverse; /* Label -> Line -> Dot */
+}
+.product-tag.tag-2 .tag-connector-line {
+  width: 50px; /* Line length */
+}
+
+
+/* Shop the Look Section */
+.shop-the-look-section {
+  padding: 20px;
+  background-color: white;
+  border-top: 1px solid #f0f0f0; /* Subtle separator from image */
+}
+
+.shop-the-look-section .shop-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.shop-items-horizontal-scroll {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  gap: 15px; /* Space between items */
+  padding-bottom: 10px; /* Space for scrollbar if visible */
+}
+
+/* Hide scrollbar for aesthetic purposes (optional) */
+.shop-items-horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+.shop-items-horizontal-scroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.shop-item-card {
+  flex-shrink: 0; /* Prevent items from shrinking */
+  width: 120px; /* Fixed width for each card */
+  height: 160px; /* Fixed height for each card (image shows rectangular cards, roughly 3:4 aspect) */
+  background-color: #f4c2a1; /* Placeholder color from original style.css */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
