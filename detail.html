@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Peeker - 상세 페이지</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fixed-app-header">
+        <div class="status-bar">
+            <span>4:21</span>
+            <div class="status-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+        <!-- Header for the detail page -->
+        <div class="header detail-header">
+            <div class="back-btn" onclick="navigateToPage('main')"><i class="fas fa-chevron-left"></i></div>
+            <div class="flex-spacer"></div> <!-- 다시 추가 -->
+            <span class="header-title">I Peeker</span>
+            <div class="flex-spacer"></div> <!-- 다시 추가 -->
+            <div class="header-menu"><i class="fas fa-share-alt"></i></div>
+        </div>
+    </div>
+
+    <!-- Main content container for the feed item details -->
+    <div class="feed-detail-container">
+            <!-- Main image of Karina -->
+            <img src="https://i.imgur.com/karina-fashion.jpg" alt="Karina" class="feed-detail-image"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzM1IiBoZWlnaHQ9IjQ4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM4N0NFRkEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjM5NkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI0NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPktBUklOQTwvdGV4dD4KICA8dGV4dCB4PSI1MCUiIHk9IjU1JSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TG9uZyBuYXZ5IHBhZGRlZCBwcmVwcHkgbG9vaxwvdGV4dD4KPC9zdmc+Cg=='">
+            
+            <!-- Interaction actions: views, likes, comments -->
+            <div class="feed-detail-actions">
+                <div class="action-item">
+                    <i class="far fa-eye"></i>
+                    <span>4657</span>
+                </div>
+                <div class="action-item">
+                    <!-- 하트 아이콘을 버튼으로 감싸고, toggleLike 함수에 맞게 초기 클래스를 far로 설정 -->
+                    <button class="action-btn" onclick="toggleLike(this)">
+                        <i class="far fa-heart"></i> 
+                    </button>
+                    <span>24K</span>
+                </div>
+                <div class="action-item">
+                    <!-- 댓글 아이콘을 버튼으로 감싸고, openCommentModal 함수 연결 -->
+                    <button class="action-btn" onclick="openCommentModal()">
+                        <i class="far fa-comment"></i>
+                    </button>
+                    <span>34K</span>
+                </div>
+                <div class="action-item">
+                    <!-- 북마크 아이콘을 버튼으로 감싸고, toggleBookmark 함수 연결 -->
+                    <button class="action-btn" onclick="toggleBookmark(this)">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Text content: title, description, shop section -->
+            <div class="feed-detail-content">
+                <h1 class="feed-detail-title">KARINA - Lovely short padded preppy look</h1>
+                <p class="feed-detail-description">Carina left for Milan, Italy, on the 12th to attend the 2024 fall/winter menswear fashion show of Italian luxury fashion brand PRADA.</p>
+                
+                <h2 class="shop-title">Shop the look</h2>
+                <div class="shop-items">
+                    <div class="shop-item-placeholder"></div>
+                    <div class="shop-item-placeholder"></div>
+                    <div class="shop-item-placeholder"></div>
+                    <div class="shop-item-placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 하단 네비게이션 (모든 페이지에 공통적으로 포함) -->
+    <div class="bottom-nav">
+      <div class="nav-item" data-page="main">
+        <i class="fas fa-home"></i>
+        <span>홈</span>
+      </div>
+      <div class="nav-item" data-page="search">
+        <i class="fas fa-search"></i>
+        <span>검색</span>
+      </div>
+      <div class="nav-item" data-page="import">
+        <i class="fas fa-plus"></i>
+        <span>추가</span>
+      </div>
+      <div class="nav-item" data-page="bookmark">
+        <i class="fas fa-bookmark"></i>
+        <span>북마크</span>
+      </div>
+      <div class="nav-item" data-page="menu">
+        <i class="fas fa-bars"></i>
+        <span>더보기</span>
+      </div>
+    </div>
+
+    <!-- Comment Modal -->
+    <div class="comment-modal-overlay" id="commentModalOverlay">
+        <div class="comment-modal" id="commentModal">
+            <div class="comment-modal-header">
+                <div class="comment-modal-handle"></div> <!-- 모달 상단의 핸들 -->
+                <h3>댓글</h3>
+                <button class="close-modal-btn" onclick="closeCommentModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="comment-list">
+                <div class="comment-item">
+                    <div class="comment-avatar"></div>
+                    <div class="comment-content">
+                        <span class="comment-author">aespa_official</span>
+                        <span class="comment-text">와 진짜 예쁘다.. 이건 무조건 저장!!</span>
+                        <span class="comment-time">2시간 전</span>
+                    </div>
+                </div>
+                <div class="comment-item">
+                    <div class="comment-avatar"></div>
+                    <div class="comment-content">
+                        <span class="comment-author">fashionista_k</span>
+                        <span class="comment-text">프라다랑 찰떡이네요 😍</span>
+                        <span class="comment-time">1일 전</span>
+                    </div>
+                </div>
+                <div class="comment-item">
+                    <div class="comment-avatar"></div>
+                    <div class="comment-content">
+                        <span class="comment-author">style_lover</span>
+                        <span class="comment-text">컬러 조합 최고! 저도 이렇게 입어보고 싶어요.</span>
+                        <span class="comment-time">2일 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-input-area">
+                <div class="current-user-avatar"></div>
+                <input type="text" class="comment-input" placeholder="댓글을 입력하세요...">
+                <button class="comment-post-btn">게시</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Peeker - 홈</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="fixed-app-header">
+    <div class="status-bar">
+      <span>4:21</span>
+      <div class="status-icons">
+        <i class="fas fa-signal"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-battery-full"></i>
+      </div>
+    </div>
+    <div class="header">
+      <div class="back-btn"></div> <!-- 이 부분은 비어있지만, 왼쪽 정렬의 기준점이 됩니다. -->
+      <div class="header-title">I Peeker</div> <!-- 왼쪽 정렬될 제목 -->
+      <div class="flex-spacer"></div> <!-- 이 스페이서가 모든 남은 공간을 차지하여 header-menu를 오른쪽 끝으로 밀어냅니다. -->
+      <div class="header-menu"><i class="fas fa-bars" onclick="navigateToPage('menu')"></i></div>
+    </div>
+  </div>
+  </div>
+  <div class="page">
+    <div class="header">
+      <div class="back-btn"></div>
+    </div>
+    
+    <!-- 스토리 섹션 -->
+    <div class="story-section" id="storySection" style="display: none;">
+      <div class="story-list">
+        <div class="story-item">
+          <div class="story-avatar">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9InVybCgjZ3JhZGllbnQpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg3Q0VGEiIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2Mzk2RkYiLz4KPC9saW5lYXJncmFkaWVudD4KPC9kZWZzPgo8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE2IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPktBPC90ZXh0Pgo8L3N2Zz4K" alt="KARINA">
+          </div>
+          <div class="story-name">카리나</div>
+        </div>
+        <div class="story-item">
+          <div class="story-avatar">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9InVybCgjZ3JhZGllbnQyKSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudDIiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRkY2QkZGIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0ZGOEVEQyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcm1pZGRsZSIgZHk9Ii4zZW0iPklPPC90ZXh0Pgo8L3N2Zz4K" alt="IU">
+          </div>
+          <div class="story-name">아이유</div>
+        </div>
+        <div class="story-item">
+          <div class="story-avatar">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9InVybCgjZ3JhZGllbnQzKSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudDMiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRkZENzAwIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0ZGQTUwMCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcm1pZGRsZSIgZHk9Ii4zZW0iPUpTPC90ZXh0Pgo8L3N2Zz4K" alt="JENNIE">
+          </div>
+          <div class="story-name">제니</div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="main-feed">
+        <div class="feed-item" onclick="navigateToPage('detail')"> <!-- 이 부분만 추가/수정 -->
+    <img src="https://i.imgur.com/karina-fashion.jpg" alt="KARINA Fashion" class="feed-image" 
+        onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzM1IiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM4N0NFRkEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjM5NkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI0NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPktBUklOQTwvdGV4dD4KICA8dGV4dCB4PSI1MCUiIHk9IjU1JSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TG9uZyBuYXZ5IHBhZGRlZCBwcmVwcHkgbG9vazwvdGV4dD4KPC9zdmc+Cg=='">
+    <div class="feed-content">
+        <div class="feed-title">KARINA - Long navy padded preppy look</div>
+        <div class="color-palette">
+        <div class="color-item" style="background-color: #f4c2a1;"></div>
+        <div class="color-item" style="background-color: #e8b896;"></div>
+        <div class="color-item" style="background-color: #dba882;"></div>
+        <div class="color-item" style="background-color: #cf9a70;"></div>
+        </div>
+        <div class="feed-actions">
+        <div class="action-left">
+            <button class="action-btn" onclick="toggleLike(this)">
+            <i class="far fa-heart"></i>
+            </button>
+            <button class="action-btn" onclick="toggleBookmark(this)">
+            <i class="far fa-bookmark"></i>
+            </button>
+            <button class="action-btn">
+            <i class="far fa-share"></i>
+            </button>
+        </div>
+        <div>
+            <button class="action-btn">
+            <i class="fas fa-ellipsis-h"></i>
+            </button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+      <div class="feed-item">
+        <img src="https://picsum.photos/335/400?random=2" alt="Fashion" class="feed-image">
+        <div class="feed-content">
+          <div class="feed-title">IU - Casual soft cardigan style</div>
+          <div class="color-palette">
+            <div class="color-item" style="background-color: #f4c2a1;"></div>
+            <div class="color-item" style="background-color: #e8b896;"></div>
+            <div class="color-item" style="background-color: #dba882;"></div>
+            <div class="color-item" style="background-color: #cf9a70;"></div>
+          </div>
+          <div class="feed-actions">
+            <div class="action-left">
+              <button class="action-btn" onclick="toggleLike(this)">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="action-btn" onclick="toggleBookmark(this)">
+                <i class="far fa-bookmark"></i>
+              </button>
+              <button class="action-btn">
+                <i class="far fa-share"></i>
+              </button>
+            </div>
+            <div>
+              <button class="action-btn">
+                <i class="fas fa-ellipsis-h"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 하단 네비게이션 -->
+  <div class="bottom-nav">
+    <div class="nav-item" data-page="main">
+      <i class="fas fa-home"></i>
+      <span>홈</span>
+    </div>
+    <div class="nav-item" data-page="search">
+      <i class="fas fa-search"></i>
+      <span>검색</span>
+    </div>
+    <div class="nav-item" data-page="import">
+      <i class="fas fa-plus"></i>
+      <span>추가</span>
+    </div>
+    <div class="nav-item" data-page="bookmark">
+      <i class="fas fa-bookmark"></i>
+      <span>북마크</span>
+    </div>
+    <div class="nav-item" data-page="menu">
+      <i class="fas fa-bars"></i>
+      <span>더보기</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

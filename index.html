@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Peeker - 로그인</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-screen">
+    <h1 class="login-title">로그인</h1>
+    <p class="login-subtitle">계속하려면 로그인하세요</p>
+    <div class="login-options">
+      <button class="login-btn" onclick="navigateToPage('main')">
+        <i class="fab fa-google"></i>
+        구글 계정으로 계속하기
+      </button>
+      <button class="login-btn" onclick="navigateToPage('main')">
+        <i class="fab fa-facebook"></i>
+        페이스북 계정으로 계속하기
+      </button>
+      <div class="or-divider">또는</div>
+      <button class="login-btn" onclick="navigateToPage('main')">
+        이메일로 계속하기
+      </button>
+    </div>
+  </div>
+  <!-- 로그인 페이지는 하단 네비게이션 없음 -->
+  <script src="script.js"></script>
+</body>
+</html>

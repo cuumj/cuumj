@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Peeker Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Inter font (assuming it's used for the design) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- This 'page' div will hold the content for the specific screen shown in the image -->
+    <div class="page active" id="detail-page">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span>4:21</span>
+            <div class="status-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+        
+        <!-- Header for the detail page -->
+        <div class="header-detail">
+            <i class="fas fa-chevron-left back-btn"></i>
+            <span class="header-title-detail">I Peeker</span>
+            <i class="fas fa-share-alt header-share"></i>
+        </div>
+
+        <!-- Main content container for the feed item details -->
+        <div class="feed-detail-container">
+            <!-- Main image of Karina -->
+            <img src="https://via.placeholder.com/375x480/999999/FFFFFF?text=Karina+Image" alt="Karina" class="feed-detail-image">
+            <!-- Replace 'https://via.placeholder.com/375x480/999999/FFFFFF?text=Karina+Image' with the actual image URL if available -->
+            
+            <!-- Interaction actions: views, likes, comments -->
+            <div class="feed-detail-actions">
+                <div class="action-item">
+                    <i class="far fa-eye"></i>
+                    <span>4657</span>
+                </div>
+                <div class="action-item">
+                    <!-- Heart is filled and red in the image, so use fas fa-heart directly -->
+                    <i class="fas fa-heart"></i> 
+                    <span>24K</span>
+                </div>
+                <div class="action-item">
+                    <i class="far fa-comment"></i>
+                    <span>34K</span>
+                </div>
+            </div>
+
+            <!-- Text content: title, description, shop section -->
+            <div class="feed-detail-content">
+                <h1 class="feed-detail-title">KARINA - Lovely short padded preppy look</h1>
+                <p class="feed-detail-description">Carina left for Milan, Italy, on the 12th to attend the 2024 fall/winter menswear fashion show of Italian luxury fashion brand PRADA.</p>
+                
+                <h2 class="shop-title">Shop the look</h2>
+                <div class="shop-items">
+                    <div class="shop-item-placeholder"></div>
+                    <div class="shop-item-placeholder"></div>
+                    <div class="shop-item-placeholder"></div>
+                    <div class="shop-item-placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The original code implies other pages and a bottom navigation, 
+         but they are not visible in the provided image. 
+         For this specific page, the bottom nav is omitted from HTML. -->
+    
+    <script src="script.js"></script>
+</body>
+</html>

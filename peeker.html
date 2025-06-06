@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Peeker - 프로필</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="back-btn" onclick="navigateToPage('main')"><i class="fas fa-chevron-left"></i></div>
+      <div class="header-title">I Peeker</div>
+      <div class="header-menu"></div>
+    </div>
+    
+    <div class="peeker-selection">
+      <div class="main-peeker">
+        <div class="main-avatar">
+          <img src="https://picsum.photos/120/120?random=10" alt="Main Peeker">
+        </div>
+        <div class="main-name">김지수</div>
+        <div class="main-subtitle">Long navy padded preppy look</div>
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-number">12</div>
+            <div class="stat-label">게시물</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1.2K</div>
+            <div class="stat-label">팔로워</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">845</div>
+            <div class="stat-label">팔로잉</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="peeker-grid">
+        <div class="peeker-item">
+          <div class="peeker-avatar">
+            <img src="https://picsum.photos/60/60?random=11" alt="Peeker 1">
+          </div>
+          <div class="peeker-name">카리나</div>
+        </div>
+        <div class="peeker-item">
+          <div class="peeker-avatar">
+            <img src="https://picsum.photos/60/60?random=12" alt="Peeker 2">
+          </div>
+          <div class="peeker-name">윈터</div>
+        </div>
+        <div class="peeker-item">
+          <div class="peeker-avatar" style="background-color: #333;"></div>
+          <div class="peeker-name">익명</div>
+        </div>
+        <div class="peeker-item">
+          <div class="peeker-avatar" style="background-color: #666;"></div>
+          <div class="peeker-name">익명</div>
+        </div>
+        <div class="peeker-item">
+          <div class="peeker-avatar">
+            <img src="https://picsum.photos/60/60?random=13" alt="Peeker 5">
+          </div>
+          <div class="peeker-name">지수</div>
+        </div>
+        <div class="peeker-item">
+          <div class="peeker-avatar">
+            <img src="https://picsum.photos/60/60?random=14" alt="Peeker 6">
+          </div>
+          <div class="peeker-name">로제</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 하단 네비게이션 -->
+  <div class="bottom-nav">
+    <div class="nav-item" data-page="main">
+      <i class="fas fa-home"></i>
+      <span>홈</span>
+    </div>
+    <div class="nav-item" data-page="search">
+      <i class="fas fa-search"></i>
+      <span>검색</span>
+    </div>
+    <div class="nav-item" data-page="import">
+      <i class="fas fa-plus"></i>
+      <span>추가</span>
+    </div>
+    <div class="nav-item" data-page="bookmark">
+      <i class="fas fa-bookmark"></i>
+      <span>북마크</span>
+    </div>
+    <div class="nav-item" data-page="menu">
+      <i class="fas fa-bars"></i>
+      <span>더보기</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

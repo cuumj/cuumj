@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Peeker - 북마크</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="back-btn" onclick="navigateToPage('main')"><i class="fas fa-chevron-left"></i></div>
+      <div class="header-title">Bookmark</div>
+      <div class="header-menu"></div>
+    </div>
+    
+    <div class="bookmark-grid">
+      <div class="bookmark-item">
+        <img src="https://picsum.photos/160/200?random=20" alt="Bookmark 1">
+      </div>
+      <div class="bookmark-item">
+        <img src="https://picsum.photos/160/200?random=21" alt="Bookmark 2">
+      </div>
+      <div class="bookmark-item">
+        <img src="https://picsum.photos/160/200?random=22" alt="Bookmark 3">
+      </div>
+      <div class="bookmark-item">
+        <img src="https://picsum.photos/160/200?random=23" alt="Bookmark 4">
+      </div>
+    </div>
+  </div>
+
+  <!-- 하단 네비게이션 -->
+  <div class="bottom-nav">
+    <div class="nav-item" data-page="main">
+      <i class="fas fa-home"></i>
+      <span>홈</span>
+    </div>
+    <div class="nav-item" data-page="search">
+      <i class="fas fa-search"></i>
+      <span>검색</span>
+    </div>
+    <div class="nav-item" data-page="import">
+      <i class="fas fa-plus"></i>
+      <span>추가</span>
+    </div>
+    <div class="nav-item" data-page="bookmark">
+      <i class="fas fa-bookmark"></i>
+      <span>북마크</span>
+    </div>
+    <div class="nav-item" data-page="menu">
+      <i class="fas fa-bars"></i>
+      <span>더보기</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
