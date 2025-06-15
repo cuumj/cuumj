@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Category Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: white;
+    }
+
+    .container {
+      width: 375px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .back-btn {
+      font-size: 20px;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+
+    .search-bar {
+      flex-grow: 1;
+      background-color: #f0e6e6;
+      border-radius: 20px;
+      padding: 8px 12px;
+      font-size: 14px;
+      border: none;
+      outline: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 28px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+    }
+
+    .item-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #edae9d;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    .item-text {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="back-btn">←</div>
+      <input type="text" class="search-bar" placeholder="Search" />
+    </div>
+
+    <div class="grid">
+      <div class="item">
+        <div class="item-icon"></div>
+        <div class="item-text">New hits</div>
+      </div>
+      <div class="item">
+        <div class="item-icon"></div>
+        <div class="item-text">Dress</div>
+      </div>
+      <div class="item">
+        <div class="item-icon"></div>
+        <div class="item-text">Accessoires</div>
+      </div>
+      <div class="item">
+        <div class="item-icon"></div>
+        <div class="item-text">Shoes</div>
+      </div>
+      <div class="item">
+        <div class="item-icon"></div>
+        <div class="item-text">Beauty</div>
+      </div>
+      <div class="item">
+        <div class="item-icon"></div>
+        <div class="item-text">Sale</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.querySelector('.search-bar');
+      const backButton = document.querySelector('.back-btn');
+
+      // 1. 검색창에 입력 후 Enter 누르면 '입력한글자.html'로 이동
+      searchInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          // 입력된 값의 앞뒤 공백을 제거
+          const query = searchInput.value.trim();
+          
+          // 입력된 값이 있을 경우에만 이동
+          if (query) {
+            window.location.href = `${query}.html`;
+          }
+        }
+      });
+      
+      // (보너스) 좌측 상단 뒤로가기 화살표 버튼 기능 추가
+      backButton.addEventListener('click', function() {
+        window.history.back();
+      });
+
+      // 2. Backspace 누르면 이전 페이지로 이동 (입력창 포커스 아닐 때)
+      document.addEventListener('keydown', function(event) {
+        // 현재 포커스된 요소가 input이나 textarea가 아닌지 확인
+        const isTyping = document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA';
+        
+        // Backspace 키가 눌렸고, 텍스트 입력 중이 아닐 때
+        if (event.key === 'Backspace' && !isTyping) {
+          // 브라우저의 기본 동작(뒤로가기)을 방지하고 명시적으로 실행
+          event.preventDefault(); 
+          window.history.back();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
