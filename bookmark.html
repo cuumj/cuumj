@@ -9,25 +9,63 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page">
+  <!-- fixed-app-header를 추가하여 다른 페이지와 통일성을 맞춥니다. -->
+  <div class="fixed-app-header">
+    <div class="status-bar">
+      <span>4:23</span>
+      <div class="status-icons">
+        <i class="fas fa-signal"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-battery-full"></i>
+      </div>
+    </div>
     <div class="header">
-      <div class="back-btn" onclick="navigateToPage('main')"><i class="fas fa-chevron-left"></i></div>
+      <!-- 뒤로가기 버튼은 history.back()을 사용하면 더 유연합니다. -->
+      <div class="back-btn" onclick="window.history.back()"><i class="fas fa-chevron-left"></i></div>
       <div class="header-title">Bookmark</div>
+      <div class="flex-spacer"></div>
       <div class="header-menu"></div>
     </div>
-    
+  </div>
+
+  <div class="page">
     <div class="bookmark-grid">
+      <!-- (수정) 각 아이템에 하트 버튼 추가 -->
       <div class="bookmark-item">
-        <img src="https://picsum.photos/160/200?random=20" alt="Bookmark 1">
+        <img src="image/karina-padded-look.jpg" alt="Bookmark 1">
+        <button class="bookmark-heart-btn" onclick="toggleBookmarkItemRemove(this)">
+          <i class="fas fa-heart"></i>
+        </button>
       </div>
       <div class="bookmark-item">
         <img src="https://picsum.photos/160/200?random=21" alt="Bookmark 2">
+        <button class="bookmark-heart-btn" onclick="toggleBookmarkItemRemove(this)">
+          <i class="fas fa-heart"></i>
+        </button>
       </div>
       <div class="bookmark-item">
         <img src="https://picsum.photos/160/200?random=22" alt="Bookmark 3">
+        <button class="bookmark-heart-btn" onclick="toggleBookmarkItemRemove(this)">
+          <i class="fas fa-heart"></i>
+        </button>
       </div>
       <div class="bookmark-item">
         <img src="https://picsum.photos/160/200?random=23" alt="Bookmark 4">
+        <button class="bookmark-heart-btn" onclick="toggleBookmarkItemRemove(this)">
+          <i class="fas fa-heart"></i>
+        </button>
+      </div>
+       <div class="bookmark-item">
+        <img src="https://picsum.photos/160/200?random=24" alt="Bookmark 5">
+        <button class="bookmark-heart-btn" onclick="toggleBookmarkItemRemove(this)">
+          <i class="fas fa-heart"></i>
+        </button>
+      </div>
+       <div class="bookmark-item">
+        <img src="https://picsum.photos/160/200?random=25" alt="Bookmark 6">
+        <button class="bookmark-heart-btn" onclick="toggleBookmarkItemRemove(this)">
+          <i class="fas fa-heart"></i>
+        </button>
       </div>
     </div>
   </div>
