@@ -182,12 +182,22 @@ body {
   margin-bottom: 15px;
 }
 
+/* ▼▼▼▼▼▼▼▼▼▼ 이 부분 수정 및 추가 ▼▼▼▼▼▼▼▼▼▼ */
 .color-item {
   width: 30px;
   height: 30px;
   border-radius: 6px;
   cursor: pointer;
+  overflow: hidden; /* 이미지가 둥근 모서리 밖으로 나가지 않도록 설정 */
 }
+
+/* (추가) color-item 내부에 이미지를 채우기 위한 스타일 */
+.color-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지가 비율을 유지하며 컨테이너를 꽉 채우도록 설정 */
+}
+/* ▲▲▲▲▲▲▲▲▲▲ 이 부분 수정 및 추가 ▲▲▲▲▲▲▲▲▲▲ */
 
 .feed-actions {
   display: flex;
@@ -317,7 +327,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
-  padding: 20px;
+  padding: 8px;
 }
 
 .bookmark-item {
@@ -672,7 +682,9 @@ body {
 }
 
 /* Main content for detail page */
+/* Main content for detail page */
 .feed-detail-container {
+  padding-top: 85px; /* (수정) 고정 헤더 높이만큼 상단 패딩 추가 */
   padding-bottom: 100px; /* 고정된 하단 네비게이션을 위해 여백 확보 */
   background-color: white; /* 상세 페이지 컨텐츠의 배경색 */
 }
@@ -750,18 +762,23 @@ body {
 }
 
 .shop-item-placeholder {
-  background-color: #ddd; /* 플레이스홀더 배경색 */
+  background-color: #ddd;
   border-radius: 8px;
-  aspect-ratio: 1/1; /* 1:1 비율 (정사각형) */
-  /* 플레이스홀더 내부에 텍스트를 넣으려면 flexbox와 text-align 조정 */
+  aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #999;
   font-size: 12px;
   text-align: center;
+  overflow: hidden; /* (추가) 이미지가 밖으로 나가지 않도록 설정 */
 }
-
+/* (새로 추가) 플레이스홀더 안의 이미지가 꽉 차도록 설정 */
+.shop-item-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 비율을 유지하면서 컨테이너를 가득 채움 */
+}
 /* style.css 파일에 아래 내용 추가 */
 /* 슬라이더 네비게이션 버튼 */
 .slider-nav-btn {
@@ -1168,60 +1185,51 @@ body {
 .product-tag {
   position: absolute;
   display: flex;
-  align-items: center; /* Vertically align dot, line, label */
+  align-items: center; 
   z-index: 20;
 }
-
 .product-tag .tag-dot {
-  width: 8px; /* Size of the dot */
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background-color: white; /* Dot background */
-  border: 1px solid rgba(0,0,0,0.3); /* Subtle border for definition */
+  background-color: white; 
+  border: 1.5px solid rgba(0,0,0,0.4);
   flex-shrink: 0;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
-
 .product-tag .tag-connector-line {
-  height: 2px; /* Thickness of the line */
-  background-color: white; /* Line color */
+  height: 1.5px;
+  background-color: white; 
   flex-shrink: 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1); /* Match label shadow style */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
-
 .product-tag .tag-label {
   background-color: white;
-  border-radius: 4px;
-  padding: 6px 10px; /* Adjusted padding for a more compact look */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   white-space: nowrap;
-  min-width: 70px; /* Example min width for blank labels */
-  height: 28px; /* Example height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #333; /* Placeholder text color */
-  font-size: 13px; /* Placeholder text size */
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
 }
 
-/* Specific positioning for tag-1 (left side) */
 .product-tag.tag-1 {
-  top: 34%; /* Vertical position */
-  left: 20%; /* Horizontal position (dot origin) */
+  top: 48%;
+  left: 14%;
   flex-direction: row; /* Dot -> Line -> Label */
 }
 .product-tag.tag-1 .tag-connector-line {
-  width: 50px; /* Line length */
+  width: 40px; /* 선 길이 */
 }
 
-/* Specific positioning for tag-2 (right side) */
+/* tag-2 (가방 태그): 오른쪽 하단 가방을 가리키도록 수정 */
 .product-tag.tag-2 {
-  top: 41%; /* Vertical position */
-  left: 55%; /* Horizontal position (dot origin) */
-  flex-direction: row-reverse; /* Label -> Line -> Dot */
+  top: 65%; /* 세로 위치를 더 아래로 조정하여 이격 */
+  right: 25%; /* 오른쪽 기준으로 위치 설정 */ /* Label <- Line <- Dot 순서로 표시 */
 }
 .product-tag.tag-2 .tag-connector-line {
-  width: 50px; /* Line length */
+  width: 40px; /* 선 길이 설정 */
 }
 
 
@@ -1256,12 +1264,20 @@ body {
 }
 
 .shop-item-card {
-  flex-shrink: 0; /* Prevent items from shrinking */
-  width: 120px; /* Fixed width for each card */
-  height: 160px; /* Fixed height for each card (image shows rectangular cards, roughly 3:4 aspect) */
-  background-color: #f4c2a1; /* Placeholder color from original style.css */
+  flex-shrink: 0; 
+  width: 120px; 
+  height: 160px; 
+  background-color: #f4c2a1; 
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden; /* (추가) 이미지가 둥근 모서리를 넘어가지 않도록 함 */
+}
+
+/* (새로 추가) 카드 안의 이미지가 꽉 차도록 스타일링 */
+.shop-item-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지 비율을 유지하면서 카드를 가득 채움 */
 }
 
 .comment-modal-overlay {

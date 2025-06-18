@@ -31,7 +31,7 @@
     <!-- Main content container for the feed item details -->
     <div class="feed-detail-container">
             <!-- Main image of Karina -->
-            <img src="https://i.imgur.com/karina-fashion.jpg" alt="Karina" class="feed-detail-image"
+            <img src="image/카리나/카리나 메인화면2.png" alt="Karina" class="feed-detail-image"
                  onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzM1IiBoZWlnaHQ9IjQ4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM4N0NFRkEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjM5NkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI0NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPktBUklOQTwvdGV4dD4KICA8dGV4dCB4PSI1MCUiIHk9IjU1JSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TG9uZyBuYXZ5IHBhZGRlZCBwcmVwcHkgbG9vaxwvdGV4dD4KPC9zdmc+Cg=='">
             
             <!-- Interaction actions: views, likes, comments -->
@@ -67,13 +67,27 @@
                 <h1 class="feed-detail-title">KARINA - Lovely short padded preppy look</h1>
                 <p class="feed-detail-description">Carina left for Milan, Italy, on the 12th to attend the 2024 fall/winter menswear fashion show of Italian luxury fashion brand PRADA.</p>
                 
+                <!-- ▼▼▼▼▼ 이 부분이 수정되었습니다 ▼▼▼▼▼ -->
                 <h2 class="shop-title">Shop the look</h2>
                 <div class="shop-items">
-                    <div class="image/카리나/카2 옷 상세이미지.png"></div>
-                    <div class="shop-item-placeholder"></div>
-                    <div class="shop-item-placeholder"></div>
-                    <div class="shop-item-placeholder"></div>
+                    <!-- 상품 1 -->
+                    <div class="shop-item-placeholder">
+                        <img src="image/카리나/카2 옷 상세이미지.png" alt="Shop Item 1">
+                    </div>
+                    <!-- 상품 2 -->
+                    <div class="shop-item-placeholder">
+                        <img src="image/카리나/카2 옷 상세페이지 색변경.png"Shop Item 2">
+                    </div>
+                    <!-- 상품 3 -->
+                    <div class="shop-item-placeholder">
+                        <img src="image/카리나/카2 가방 2.png" alt="Shop Item 3">
+                    </div>
+                    <!-- 상품 4 -->
+                    <div class="shop-item-placeholder">
+                        <img src="image/카리나/카2 가방 3.png" alt="Shop Item 4">
+                    </div>
                 </div>
+                <!-- ▲▲▲▲▲ 여기까지 수정되었습니다 ▲▲▲▲▲ -->
             </div>
         </div>
     </div>
@@ -112,37 +126,62 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="comment-list">
-                <div class="comment-item">
-                    <div class="comment-avatar"></div>
-                    <div class="comment-content">
-                        <span class="comment-author">aespa_official</span>
-                        <span class="comment-text">와 진짜 예쁘다.. 이건 무조건 저장!!</span>
-                        <span class="comment-time">2시간 전</span>
-                    </div>
-                </div>
-                <div class="comment-item">
-                    <div class="comment-avatar"></div>
-                    <div class="comment-content">
-                        <span class="comment-author">fashionista_k</span>
-                        <span class="comment-text">프라다랑 찰떡이네요 😍</span>
-                        <span class="comment-time">1일 전</span>
-                    </div>
-                </div>
-                <div class="comment-item">
-                    <div class="comment-avatar"></div>
-                    <div class="comment-content">
-                        <span class="comment-author">style_lover</span>
-                        <span class="comment-text">컬러 조합 최고! 저도 이렇게 입어보고 싶어요.</span>
-                        <span class="comment-time">2일 전</span>
-                    </div>
-                </div>
-            </div>
-            <div class="comment-input-area">
-                <div class="current-user-avatar"></div>
-                <input type="text" class="comment-input" placeholder="댓글을 입력하세요...">
-                <button class="comment-post-btn">게시</button>
-            </div>
+<!-- ▼▼▼▼▼ 이 코드로 교체해주세요 ▼▼▼▼▼ -->
+<div class="comment-list" id="commentList">
+  <!-- 미리 작성된 댓글 1 -->
+  <div class="comment-item">
+    <div class="comment-avatar"></div>
+    <div class="comment-content">
+      <p>
+        <span class="comment-author">fashion_lover</span>
+        <span>혹시 저 네이비 패딩 정보 아시는 분 계신가요? 너무 예뻐요 ㅠㅠ</span>
+        <span class="comment-time">5분 전</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 미리 작성된 댓글 2 -->
+  <div class="comment-item">
+    <div class="comment-avatar"></div>
+    <div class="comment-content">
+      <p>
+        <span class="comment-author">daily_look_o_o</span>
+        <span>와 분위기 무슨 일... 프레피룩 찰떡이네요 ❤️</span>
+        <span class="comment-time">30분 전</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 미리 작성된 댓글 3 -->
+  <div class="comment-item">
+    <div class="comment-avatar"></div>
+    <div class="comment-content">
+      <p>
+        <span class="comment-author">user12345</span>
+        <span>저도 저렇게 입고 싶어요! 코디 저장하고 갑니다 ㅎㅎ</span>
+        <span class="comment-time">2시간 전</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 미리 작성된 댓글 4 -->
+  <div class="comment-item">
+    <div class="comment-avatar"></div>
+    <div class="comment-content">
+      <p>
+        <span class="comment-author">celeb_style_fan</span>
+        <span>역시 카리나... 소화력 최고</span>
+        <span class="comment-time">어제</span>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="comment-input-area">
+  <!-- current-user-avatar는 현재 로그인한 사용자의 프로필 사진을 보여주는 예시입니다 -->
+  <div class="current-user-avatar"></div> 
+  <input type="text" id="commentInput" class="comment-input" placeholder="댓글 달기...">
+  <button class="comment-post-btn" onclick="postComment()">게시</button>
+</div>
         </div>
     </div>
     

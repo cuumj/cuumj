@@ -23,7 +23,8 @@
       <div class="flex-spacer"></div>
       <div class="header-title">AI 분석 결과</div>
       <div class="flex-spacer"></div>
-      <div class="header-menu"><i class="fas fa-share-nodes"></i></div>
+      <!-- ▼▼▼▼▼ 아이콘 모양 수정 ▼▼▼▼▼ -->
+      <div class="header-menu"><i class="fas fa-share"></i></div>
     </div>
   </div>
     
@@ -40,30 +41,42 @@
         <!-- Central Like/Share button -->
         <div class="result-action-btn like-btn" onclick="toggleLike(this)"><i class="far fa-heart"></i></div> 
 
-        <!-- Product tags (임시 위치) -->
-        <div class="product-tag tag-1">
-            <span class="tag-dot"></span>
-            <div class="tag-connector-line"></div>
-            <div class="tag-label"></div>
-        </div>
-        <div class="product-tag tag-2">
-            <span class="tag-dot"></span>
-            <div class="tag-connector-line"></div>
-            <div class="tag-label"></div>
-        </div>
+        <!-- ▼▼▼▼▼ 상품 태그에 텍스트 추가 ▼▼▼▼▼ -->
+<div class="product-tag tag-1">
+    <span class="tag-dot"></span>
+    <div class="tag-connector-line"></div>
+    <div class="tag-label">리나일론 크롭 컨버터블 숏 패딩</div>
+</div>
+<div class="product-tag tag-2">
+    <!-- tag-2의 점과 선을 다시 추가합니다. 순서는 Label -> Line -> Dot 입니다. -->
+    <div class="tag-label">리말론 숄더백</div>
+    <div class="tag-connector-line"></div>
+    <span class="tag-dot"></span>
+</div>
+        <!-- ▲▲▲▲▲ 여기까지 수정 ▲▲▲▲▲ -->
       </div>
 
       <div class="shop-the-look-section">
         <div class="shop-title">Shop the look</div>
+        <!-- ▼▼▼▼▼ 하단 상품 목록에 이미지 태그 추가 ▼▼▼▼▼ -->
         <div class="shop-items-horizontal-scroll" id="shopItemsScroll">
-          <!-- 각 shop-item-card에 onclick 추가 -->
-          <div class="shop-item-card" onclick="navigateToShopItem('item1')"></div>
-          <div class="shop-item-card" onclick="navigateToShopItem('item2')"></div>
-          <div class="shop-item-card" onclick="navigateToShopItem('item3')"></div>
-          <div class="shop-item-card" onclick="navigateToShopItem('item4')"></div>
-          <div class="shop-item-card" onclick="navigateToShopItem('item5')"></div>
-          <!-- 더 많은 아이템이 있다면 여기에 추가 -->
+          <div class="shop-item-card" onclick="navigateToShopItem('item1')">
+            <img src="image/카리나/카리나1마네킹1.png" alt="Shop item 1">
+          </div>
+          <div class="shop-item-card" onclick="navigateToShopItem('item2')">
+            <img src="image/카리나/카리나메인1 패팅.png" alt="Shop item 2">
+          </div>
+          <div class="shop-item-card" onclick="navigateToShopItem('item3')">
+            <img src="image/카리나/카리나메인1 가방.png" alt="Shop item 3">
+          </div>
+          <div class="shop-item-card" onclick="navigateToShopItem('item4')">
+            <img src="image/카리나/카리나1키링.png" alt="Shop item 4">
+          </div>
+          <div class="shop-item-card" onclick="navigateToShopItem('item5')">
+            <img src="image/카리나/카리나1검은옷.png" alt="Shop item 5">
+          </div>
         </div>
+        <!-- ▲▲▲▲▲ 여기까지 수정 ▲▲▲▲▲ -->
       </div>
     </div>
   </div>

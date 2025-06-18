@@ -91,16 +91,24 @@ function connectInstagram() {
   }, 1000);
 }
 
-// 댓글 모달 열기
+// ▼▼▼▼▼▼▼▼▼▼ 댓글 모달 열기 함수 수정 ▼▼▼▼▼▼▼▼▼▼
 function openCommentModal() {
   const modalOverlay = document.getElementById('commentModalOverlay');
   if (modalOverlay) {
     modalOverlay.classList.add('show');
     document.body.style.overflow = 'hidden';
-    document.getElementById('commentInput').focus();
+    
+    // (수정) commentInput 요소가 있는지 확인 후 focus() 호출
+    const commentInput = document.getElementById('commentInput');
+    if (commentInput) {
+      commentInput.focus();
+    }
+    
     console.log('Comment modal opened.');
   }
 }
+// ▲▲▲▲▲▲▲▲▲▲ 댓글 모달 열기 함수 수정 ▲▲▲▲▲▲▲▲▲▲
+
 
 // 댓글 모달 닫기
 function closeCommentModal() {
@@ -112,17 +120,25 @@ function closeCommentModal() {
   }
 }
 
-// 댓글 게시 함수
+// 댓글 게시 함수 (수정 없음 - 기존 코드 유효)
 function postComment() {
   const commentInput = document.getElementById('commentInput');
   const commentList = document.getElementById('commentList');
+  
+  // (추가) 두 요소 중 하나라도 없으면 함수 종료
+  if (!commentInput || !commentList) {
+      console.error('Comment input or list not found!');
+      return;
+  }
+
   const commentText = commentInput.value.trim();
 
   if (commentText) {
     const newCommentItem = document.createElement('div');
     newCommentItem.className = 'comment-item';
+    // (수정) 댓글 작성자 프로필 사진 클래스 변경
     newCommentItem.innerHTML = `
-      <div class="current-user-avatar"></div>
+      <div class="comment-avatar"></div>
       <div class="comment-content">
         <p>
           <span class="comment-author">my_account</span>

@@ -38,39 +38,33 @@
       <div class="story-list">
         <div class="story-item">
           <div class="story-avatar">
-            <img src="https://i.ibb.co/L8Bjy8J/karina-story.jpg" alt="Karina">
+            <img src="image/카리나/카리나프로필.webp" alt="Karina">
           </div>
           <span class="story-name">Karina</span>
         </div>
         <div class="story-item">
           <div class="story-avatar">
-            <img src="https://i.ibb.co/F82YJd9/gd-story.jpg" alt="G-Dragon">
+            <img src="image/다른거/지디.webp" alt="G-Dragon">
           </div>
           <span class="story-name">G-Dragon</span>
         </div>
         <div class="story-item">
           <div class="story-avatar">
-            <img src="https://i.ibb.co/yQxGjHZ/jennie-story.jpg" alt="Jennie">
+            <img src="image/다른거/제니.jpg" alt="Jennie">
           </div>
           <span class="story-name">Jennie</span>
         </div>
        <div class="story-item">
           <div class="story-avatar">
-            <img src="https://i.ibb.co/F82YJd9/gd-story.jpg" alt="G-Dragon">
+            <img src="image/다른거/뉴진스하니.jpg" alt="G-Dragon">
           </div>
-          <span class="story-name">G-Dragon</span>
+          <span class="story-name">Hannie</span>
         </div>
        <div class="story-item">
           <div class="story-avatar">
-            <img src="https://i.ibb.co/F82YJd9/gd-story.jpg" alt="G-Dragon">
+            <img src="image/아이유/아이유 프로필.jpg" alt="G-Dragon">
           </div>
-          <span class="story-name">G-Dragon</span>
-        </div>
-        <div class="story-item">
-          <div class="story-avatar">
-            <img src="https://i.ibb.co/F82YJd9/gd-story.jpg" alt="G-Dragon">
-          </div>
-          <span class="story-name">G-Dragon</span>
+          <span class="story-name">IU</span>
         </div>
       </div>
 
@@ -113,12 +107,22 @@
         <img src="image/카리나/카리나 메인화면2.png" alt="KARINA Fashion" class="feed-image" onclick="navigateToPage('detail')">
         <div class="feed-content">
           <div class="feed-title" onclick="navigateToPage('detail')">KARINA - Long navy padded preppy look</div>
+          <!-- ▼▼▼▼▼▼▼▼▼▼ 이 부분 수정 ▼▼▼▼▼▼▼▼▼▼ -->
           <div class="color-palette">
-            <div class="color-item" style="background-color: #f4c2a1;"></div>
-            <div class="color-item" style="background-color: #e8b896;"></div>
-            <div class="color-item" style="background-color: #dba882;"></div>
-            <div class="color-item" style="background-color: #cf9a70;"></div>
+            <div class="color-item">
+              <img src="image/카리나/카2 옷 상세이미지.png" alt="Color 1">
+            </div>
+            <div class="color-item">
+              <img src="image/카리나/카2 옷 상세페이지 색변경.png" alt="Color 2">
+            </div>
+            <div class="color-item">
+              <img src="image/카리나/카2 가방 2.png" alt="Color 3">
+            </div>
+            <div class="color-item">
+              <img src="image/카리나/카2 가방 3.png" alt="Color 4">
+            </div>
           </div>
+          <!-- ▲▲▲▲▲▲▲▲▲▲ 이 부분 수정 ▲▲▲▲▲▲▲▲▲▲ -->
           <div class="feed-actions">
             <div class="action-left">
               <button class="action-btn" onclick="toggleLike(this, event)"><i class="far fa-heart"></i></button>
@@ -133,15 +137,25 @@
       </div>
 
       <div class="feed-item">
-        <img src="image/카리나/카리나 메인1화면.jpg" alt="Fashion" class="feed-image" onclick="navigateToPage('detail')">
+        <img src="image/아이유/아이유 패션 정보.jpg" alt="Fashion" class="feed-image" onclick="navigateToPage('detail')">
         <div class="feed-content">
           <div class="feed-title" onclick="navigateToPage('detail')">IU - Casual soft cardigan style</div>
+          <!-- ▼▼▼▼▼▼▼▼▼▼ 이 부분 수정 ▼▼▼▼▼▼▼▼▼▼ -->
           <div class="color-palette">
-            <div class="color-item" style="background-color: #f4c2a1;"></div>
-            <div class="color-item" style="background-color: #e8b896;"></div>
-            <div class="color-item" style="background-color: #dba882;"></div>
-            <div class="color-item" style="background-color: #cf9a70;"></div>
+            <div class="color-item">
+              <img src="image/아이유/아이유 옷 마네킹 뒷모습.png" alt="Color 5">
+            </div>
+            <div class="color-item">
+              <img src="image/아이유/아이유 옷 마네킹.png" alt="Color 6">
+            </div>
+            <div class="color-item">
+              <img src="image/아이유/아이유 옷.png" alt="Color 7">
+            </div>
+            <div class="color-item">
+              <img src="image/아이유/아이유 패션 정보.jpg" alt="Color 8">
+            </div>
           </div>
+          <!-- ▲▲▲▲▲▲▲▲▲▲ 이 부분 수정 ▲▲▲▲▲▲▲▲▲▲ -->
           <div class="feed-actions">
             <div class="action-left">
               <button class="action-btn" onclick="toggleLike(this, event)"><i class="far fa-heart"></i></button>
@@ -189,14 +203,64 @@
         <h3>댓글</h3>
         <button class="close-modal-btn" onclick="closeCommentModal()">×</button>
       </div>
-      <div class="comment-list" id="commentList">
-        <div class="comment-item">
-          <!-- ... 댓글 내용 ... -->
-        </div>
-      </div>
-      <div class="comment-input-area">
-        <!-- ... 댓글 입력창 ... -->
-      </div>
+<!-- ▼▼▼▼▼ 이 코드로 교체해주세요 ▼▼▼▼▼ -->
+<div class="comment-list" id="commentList">
+  <!-- 미리 작성된 댓글 1 -->
+  <div class="comment-item">
+    <div class="comment-avatar"></div>
+    <div class="comment-content">
+      <p>
+        <span class="comment-author">fashion_lover</span>
+        <span>혹시 저 네이비 패딩 정보 아시는 분 계신가요? 너무 예뻐요 ㅠㅠ</span>
+        <span class="comment-time">5분 전</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 미리 작성된 댓글 2 -->
+  <div class="comment-item">
+    <div class="comment-avatar"></div>
+    <div class="comment-content">
+      <p>
+        <span class="comment-author">daily_look_o_o</span>
+        <span>와 분위기 무슨 일... 프레피룩 찰떡이네요 ❤️</span>
+        <span class="comment-time">30분 전</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 미리 작성된 댓글 3 -->
+  <div class="comment-item">
+    <div class="comment-avatar"></div>
+    <div class="comment-content">
+      <p>
+        <span class="comment-author">user12345</span>
+        <span>저도 저렇게 입고 싶어요! 코디 저장하고 갑니다 ㅎㅎ</span>
+        <span class="comment-time">2시간 전</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 미리 작성된 댓글 4 -->
+  <div class="comment-item">
+    <div class="comment-avatar"></div>
+    <div class="comment-content">
+      <p>
+        <span class="comment-author">celeb_style_fan</span>
+        <span>역시 카리나... 소화력 최고</span>
+        <span class="comment-time">어제</span>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- ▲▲▲▲▲ 여기까지 교체 ▲▲▲▲▲ -->
+<!-- main.html 파일 하단, 댓글 모달 내부 수정 -->
+<div class="comment-input-area">
+  <!-- current-user-avatar는 현재 로그인한 사용자의 프로필 사진을 보여주는 예시입니다 -->
+  <div class="current-user-avatar"></div> 
+  <input type="text" id="commentInput" class="comment-input" placeholder="댓글 달기...">
+  <button class="comment-post-btn" onclick="postComment()">게시</button>
+</div>
     </div>
   </div>
 
